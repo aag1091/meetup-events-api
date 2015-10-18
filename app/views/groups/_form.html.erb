@@ -1,0 +1,36 @@
+<%= form_for(@group) do |f| %>
+  <% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+      <% @group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, readonly: true %>
+  </div>
+  <div class="field">
+    <%= f.label :group_id %><br>
+    <%= f.select :group_id, options_for_select(@ma_groups) %>
+  </div>
+  <div class="field">
+    <%= f.label :interest_group_id %><br>
+    <%= f.select :interest_group_id, options_for_select(@interest_groups, params[:interest_group_id]) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $('#group_group_id').on('change', function(e) {
+    $('#group_name').val($(this).find('option:selected').text());
+  });
+  $('#group_group_id').trigger('change');
+</script>

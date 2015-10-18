@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @interest_group.name %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @interest_group.tag %>
+</p>
+
+<p>
+  <%= link_to 'Add Groups', new_group_path(interest_group_id: @interest_group.id), id: :add_category %>
+</p>
+
+<%= link_to 'Edit', edit_interest_group_path(@interest_group) %> |
+<%= link_to 'Back', interest_groups_path %>

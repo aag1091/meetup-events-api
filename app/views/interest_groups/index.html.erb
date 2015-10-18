@@ -1,0 +1,27 @@
+<h1>Listing interest_groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Tag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interest_groups.each do |interest_group| %>
+      <tr>
+        <td><%= interest_group.name %></td>
+        <td><%= interest_group.tag %></td>
+        <td><%= link_to 'Show', interest_group %></td>
+        <td><%= link_to 'Edit', edit_interest_group_path(interest_group) %></td>
+        <td><%= link_to 'Destroy', interest_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Interest group', new_interest_group_path %>
