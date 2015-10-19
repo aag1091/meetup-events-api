@@ -10,6 +10,47 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+
+
+.event {
+  padding: 1rem 1rem 1rem 0;
+  display: table; }
+
+.event-date {
+  width: 6rem;
+  margin: 0 auto 1rem;
+  display: table-cell;
+  width: auto; }
+.event-date .event-month {
+  margin: 0;
+  background: #eee;
+  padding: 0.5rem 2rem;
+  text-align: center; }
+.event-date .event-day {
+  margin: 0;
+  border: 1px solid #eee;
+  padding: 0 2rem;
+  text-align: center;
+  font-size: 2rem; }
+
+.event-desc {
+  padding: 0 0 0 1rem;
+  text-align: left;
+  display: table-cell;
+  vertical-align: top; }
+.event-desc .event-desc-header {
+  margin: 0 0 0.5rem 0;
+  padding: 0; }
+.event-desc .event-desc-detail {
+  margin: 0 0 0.25rem;
+  padding: 0; }
+.event-desc .event-desc-time {
+  font-weight: bold; }
+.event-desc .rsvp.button {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin: 0; }
