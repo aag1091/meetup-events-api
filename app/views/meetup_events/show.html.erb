@@ -20,7 +20,7 @@
             <%#= me['description'] ? me['description'].html_safe : '' %>
           </p>
           <%= link_to 'Details', '#', data: { reveal_id: "details-#{me['id']}"}, class: "rsvp button" %>
-          <%= link_to 'RSVP', me['event_url'], class: "rsvp button" %>
+          <%= link_to 'RSVP', me['event_url'], class: "rsvp button", target: '_blank' %>
         </div>
       </article>
       <div data-reveal="" class="reveal-modal" id="<%= "details-#{me['id']}" %>">
@@ -41,7 +41,7 @@
                 <%= "Venue: #{me['venue']['name']} - #{me['venue']['address_1']}, #{me['venue']['city']} #{me['venue']['state']}"  %>
               </p>
             <% end %>
-            <%= link_to 'RSVP', me['event_url'], class: "rsvp button" %>
+            <%= link_to 'RSVP', me['event_url'], class: "rsvp button", target: '_blank' %>
           </div>
         </article>
       </div>
